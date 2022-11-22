@@ -63,7 +63,7 @@ export default function Form() {
       navigate("/reply");
     } else {
       window.location.replace(
-        "https://github.com/nancyliao0612/pwc-project-final"
+        "https://www.pwc.tw/zh/publications/topic-bio/assets/2022-precision-medicine.pdf"
       );
     }
   };
