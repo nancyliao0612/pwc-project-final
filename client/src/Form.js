@@ -62,7 +62,9 @@ export default function Form() {
     ) {
       navigate("/reply");
     } else {
-      window.location.replace("https://www.google.com.tw/");
+      window.location.replace(
+        "https://github.com/nancyliao0612/pwc-project-final"
+      );
     }
   };
 
