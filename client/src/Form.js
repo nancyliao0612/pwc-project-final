@@ -9,6 +9,9 @@ const TextField = styled.div`
   span {
     color: var(--theme-color);
   }
+  input {
+    border: none;
+  }
   @media only screen and (min-width: 768px) {
     margin: 15px 0;
   }
@@ -23,11 +26,22 @@ export default function Form() {
   } = useForm();
 
   const onSubmit = async (data) => {
-    const { name, company, taxID, email, address, phone } = data;
+    const {
+      name,
+      company,
+      department,
+      jobTitle,
+      taxID,
+      email,
+      address,
+      phone,
+    } = data;
     try {
-      const response = await axios.post("/api/respondents", {
+      await axios.post("/api/respondents", {
         name,
         company,
+        department,
+        jobTitle,
         taxID,
         email,
         address,
@@ -62,9 +76,7 @@ export default function Form() {
     ) {
       navigate("/reply");
     } else {
-      window.location.replace(
-        "https://www.pwc.tw/zh/publications/topic-bio/assets/2022-precision-medicine.pdf"
-      );
+      navigate("/downloadPDF");
     }
   };
 
@@ -106,6 +118,14 @@ export default function Form() {
         </h2>
         <input {...register("company", { required: "請輸入正確資訊" })} />
         <p>{errors.company?.message}</p>
+      </TextField>
+      <TextField>
+        <h2 htmlFor="department">部門</h2>
+        <input {...register("department")} />
+      </TextField>
+      <TextField>
+        <h2 htmlFor="jobTitle">職稱</h2>
+        <input {...register("jobTitle")} />
       </TextField>
       <TextField>
         <h2 htmlFor="taxID">
