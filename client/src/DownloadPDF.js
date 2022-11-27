@@ -3,13 +3,13 @@ import styled from "styled-components";
 import Pdf from "./util/2022-precision-medicine-web.pdf";
 
 const Wrapper = styled.div`
-  margin: 5rem auto;
+  padding: 5rem 0;
   text-align: center;
   a {
     text-decoration: none;
     color: var(--background-color);
     background: var(--theme-color);
-    padding: 10px;
+    padding: 15px;
     font-size: 1.4rem;
     border-radius: 5px;
   }
